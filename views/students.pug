@@ -1,0 +1,25 @@
+extends index.pug
+
+block content
+    main
+        .students
+            .filter-tab
+                button.gender(data-gender="all") All
+                button.gender(data-gender="male") male
+                button.gender(data-gender="female") female
+            if students.length
+                .cards
+                    each student in students 
+                        .card(data-id=student.id)
+                            img.student_img(src=student.image ? `/public/uploads/${student.image}` : 'https://www.pngkey.com/png/full/988-9886269_blank-person-facebook-no-profile.png', alt="student_image")
+                            h2 #{student.student_name}
+                            h6 #{student.student_id}
+                            .birth_gender 
+                                p #{student.student_birth}
+                                p #{student.student_gender}
+                            a(href=`/${student.id}/delete` type="button") delete
+                            a(href=`/addStudent?id=${student.id}` type="button").edit edit
+            else 
+                .null-data 
+                    img(src="/public/images/null-data.png", alt="null-data")
+                    h4 There is no students

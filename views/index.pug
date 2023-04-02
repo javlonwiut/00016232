@@ -1,0 +1,34 @@
+doctype html
+html(lang="en")
+    head
+        title 00016232
+        link(rel="stylesheet", href="/public/styles.css")
+    body
+        header.navbar
+            .navbar__container 
+                a.logo(href="/") students 
+                    span info
+                nav.nav
+                    a(href="/") Home
+                    a(href="/students?gender=all") Students
+                    a(href="/addStudent") Add Student
+
+        block content 
+
+        footer.footer 
+            .footer__container
+                a.logo(href="/") students 
+                    span info
+                .nav 
+                    h2 Navigations
+                    a(href="/notes") Home
+                    a(href="/students?gender=all") Students
+                    a(href="/addStudent") Add Student
+                .contact 
+                    h2 Contacts
+                    a(href="#") wiut.uz 
+                    a(href="#") +998 (72) 635-34-89
+                    a(href="#") wiut.twitter.uz
+        script(src="/public/frontend/modal.js") 
+        script(src="/public/frontend/students.js") 
+        script(src="/public/frontend/studentById.js") 
